@@ -10,7 +10,19 @@
   <div id="app">
     <div id="movies">
     </div>
-    <div id="locations"></div>
+    <div id="filters">
+      <div class="row justify-content-md-center">
+        <input id="search-input" type="text" placeholder="Search Here!"></input>
+      </div>
+      <div class="row justify-content-md-center">
+        <button id="all" class="btn btn-outline-dark">All</button>
+        <button id="morning" class="btn btn-secondary">Morning</button>
+        <button id="afternoon" class="btn btn-success">Afternoon</button>
+        <button id="evening" class="btn btn-info">Evening</button>
+        <button id="dark" class="btn btn-danger">After Dark</button>
+      </div>
+    </div>
+    <div id="locations" class="d-flex flex-wrap"></div>
   </div>
 </body>
 </html>
