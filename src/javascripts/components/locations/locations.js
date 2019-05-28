@@ -26,20 +26,17 @@ const shootTimeClass = (shootTime) => {
   return selectedClass;
 };
 
-const domStringBuilder = (locArray) => {
+const domStringBuilder = (selectedLocations) => {
   let domString = '';
-  domString += '<h2>Locations:</h2>';
-  domString += '<div class="row">';
-  locArray.forEach((location) => {
-    domString += '<div class="col-sm-6 col-md-4 col-lg-2">';
-    domString += `<div id="${location.id}" class="card text-center">`;
+  selectedLocations.forEach((location) => {
+    domString += `<div id="${location.id}" class="movie locationCard card col-2 mt-5">`;
     domString += `<div class="card-header ${shootTimeClass(location.shootTime)}">${location.name}</div>`;
-    domString += `<img class="img-thumbnail" src="${location.imageUrl}">`;
-    domString += `<p>${location.address}</p>`;
+    domString += `<img class="card-img-top" src="${location.imageUrl}" alt="Card image cap"></img>`;
+    domString += '<div class="card-body">';
+    domString += `<p class="card-title">Location: ${location.address}</p>`;
     domString += '</div>';
     domString += '</div>';
   });
-  domString += '</div>';
   util.printToDom('locations', domString);
 };
 
